@@ -9,7 +9,7 @@ A max 150-word description of the project question or idea, goals, dataset used.
 Build a Content-based movie recommender system
 
 ## Dataset
-For this project, we used The Movie Dataset[https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset] on Kaggle. The dataset includes Metadata on over 45,000 movies and 26 million ratings from over 270,000 users.
+For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset) on Kaggle. The dataset includes Metadata on over 45,000 movies and 26 million ratings from over 270,000 users.
 
 ## A tentative list of milestones for the project
 
@@ -31,7 +31,3 @@ For this project, we used The Movie Dataset[https://www.kaggle.com/datasets/roun
 
 ## Documentation
 This can be added as the project unfolds. You should describe, in particular, what your repo contains and how to reproduce your results.
-https://www.kaggle.com/code/fabiendaniel/film-recommendation-engine
-https://www.kaggle.com/code/erikbruin/movie-recommendation-systems-for-tmdb
-https://www.kaggle.com/code/gpreda/movie-recommendation-model
-
