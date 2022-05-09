@@ -12,8 +12,8 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
 
 ## A tentative list of milestones for the project
 
-- [ ] Getting the dataset
-- [ ] Data Cleaning and Processing
+- [x] Getting the dataset
+- [x] Data Cleaning and Processing
     * Keywords, missing values, number of films per year, genres
         * plot some fancy graphs pf genres, years, keywords....
 - [ ] Training the Recommender System
