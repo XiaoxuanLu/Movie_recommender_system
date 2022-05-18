@@ -17,11 +17,11 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
     * Keywords, missing values, number of films per year, genres
         * plot some fancy graphs pf genres, years, keywords....
 - [x] Training the Recommender System
-    [x] Calculating the Weighted Rating (using the IMDB formula)
-    [x] Simple recommendation system
+    - [x] Calculating the Weighted Rating (using the IMDB formula)
+    - [x] Simple recommendation system
         * offer generalized recommendations to every user, based on movie ratings
         * user can chose based on different features, e.g. genre, language, publication year, cast
-    [x] Content-based recommendation system (based on similarity of genres and keywords)
+    - [x] Content-based recommendation system (based on similarity of genres and keywords)
         * maybe cosine similarity or other similarity ways to find most related n movies
 - [ ] Testing and Validation
     * Compare our results to Netflix recommendations?
