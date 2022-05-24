@@ -41,3 +41,9 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
 - Simple_recommender.ipynb: build a simple recommender based on ranking, langauge, runttime, and year
 - Content_based_recommendation.ipynb: build a content based recommender based on the text features such as tagline, overview, and actor. Compare and combine several similarity methods to build the recommender.
 - Visualizing_data.ipynb: Visualize the original dataset, and plot some fancy graphs to see if any feature is interesting to use.
+
+## Install package and run app
+```properties
+pip install streamlit
+streamlit run app.py
+``` 
