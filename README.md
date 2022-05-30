@@ -15,16 +15,19 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
 - [x] Getting the dataset
 - [x] Data Cleaning and Processing
     * Keywords, missing values, number of films per year, genres
-        * plot some fancy graphs pf genres, years, keywords....
 - [x] Training the Recommender System
     - [x] Calculating the Weighted Rating (using the IMDB formula)
-    - [x] Simple recommendation system
-        * offer generalized recommendations to every user, based on movie ratings
-        * user can chose based on different features, e.g. genre, language, publication year, cast
-    - [x] Content-based recommendation system (based on similarity of genres and keywords)
-        * maybe cosine similarity or other similarity ways to find most related n movies
+    - [x] Simple recommendation system   
+         * offer generalized recommendations to every user, based on movie ratings
+         * user can chose based on different features, e.g. genre, language, publication year, cast, runtime, popularity, director and cast.
+    - [x] Content-based recommendation system    
+         * Based on Movie Overviews and Taglines
+         * Based on Movie Cast, Crew, Keywords and Genre 
+         * Compared severl methods: Cosine similarity with TF-IDF and CountVectorizer & KL Divergence 
 - [ ] Testing and Validation
-    * Compare our results to Netflix recommendations?
+   * Compare content-based results to Netflix recommendations?
+   * Compare the simple recommender to information on [IMDb website](https://www.imdb.com/chart/top/?ref_=nv_mv_250).
+   * Compare the content-based recommender systems to other mainstreams such as Amazon prime videos
 - [ ] Saving the Trained Model for Deployment
 - [ ] Writing the report
 - [ ] Creating a Website and deploying the model if time allowed
@@ -38,11 +41,14 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
 
 ## Documentation
 - README.md: an overview of the project
-- Simple_recommender.ipynb: build a simple recommender based on ranking, langauge, runttime, and year
+- Simple_recommender.ipynb: build a simple recommender based on ranking, langauge, runtime, and year
 - Content_based_recommendation.ipynb: build a content based recommender based on the text features such as tagline, overview, and actor. Compare and combine several similarity methods to build the recommender.
 - Visualizing_data.ipynb: Visualize the original dataset, and plot some fancy graphs to see if any feature is interesting to use.
 
-## Install package and run app
+## How to run the project? 
+- clone or download this repository to your local machine
+- download the [datasets](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset/download), and save the datasets into **data** folder in the repository. 
+- Install package and run app
 ```properties
 pip install streamlit
 streamlit run app.py
