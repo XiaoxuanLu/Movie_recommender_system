@@ -24,7 +24,7 @@ def recommend(genre, language, str_year, end_year, runtime):
     dic = {"English": "en", "French": "fr",
            "Italian": "it", "German": "de", "Japanese": "ja"}
     df = dataset[dataset['genre'] == genre]
-    if language != 'None':
+    if language != 'Any':
         df = df[df['original_language'] == dic[language]]
     df = df[df['year'] <= end_year]
     df = df[df['year'] >= str_year]
@@ -46,7 +46,7 @@ category = st.selectbox(
     ('Action', 'Adventure', 'Animation', 'Comedy', 'Crime', 'Family', 'Fantasy', 'Drama', 'Documentary', 'History', 'Horror', 'Mystery', 'Romance', 'Science Fiction', 'Thriller', 'War'))
 
 language = st.radio(label='Language', options=[
-                    'English', 'French', 'Italian', 'German', 'Japanese', 'None'])
+                    'English', 'French', 'Italian', 'German', 'Japanese', 'Any'])
 st.write(
     '<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 optionslst = list(range(1874, 2018))
