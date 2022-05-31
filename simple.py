@@ -24,17 +24,12 @@ def recommend(genre, language='English', year='2017', runtime=90):
     dic = {"English": "en", "French": "fr",
            "Italian": "it", "German": "de", "Japanese": "ja"}
     df = dataset[dataset['genre'] == genre]
-    if language is not 'None':
+    if language != 'None':
         df = df[df['original_language'] == dic[language]]
     df = df[df['year'] == year]
+    df['time_diff'] = abs(df['runtime']-runtime)
 
-    qualified = df[(df['vote_count'] >= m) & (df['vote_count'].notnull())][[
-        'id', 'title', 'original_language', 'year', 'runtime', 'vote_count', 'vote_average', 'imdb_id']]
-    qualified['vote_count'] = qualified['vote_count'].astype('int')
-    qualified['runtime'] = qualified['runtime'].astype('int')
-    qualified['time_diff'] = abs(qualified['runtime']-runtime)
-
-    chart = qualified.sort_values(
+    chart = df.sort_values(
         ['IMDB_rating', 'time_diff'], ascending=[False, True]).head(10)
     posters = []
     for i in list(chart['imdb_id']):
@@ -58,23 +53,23 @@ year = st.slider('The year of the movie', 1874, 2017, 2017)
 runtime = st.slider('The runtime of the movie in minutes', 60, 240, 90)
 
 if st.button('Recommend!'):
-    st.write('Hi')
-    # recommended_movie_names, recommended_movie_posters = recommend(
-    #     category, language, year, runtime)
-    # col1, col2, col3, col4, col5 = st.columns(5)
-    # with col1:
-    #     st.text(recommended_movie_names[0])
-    #     st.image(recommended_movie_posters[0])
-    # with col2:
-    #     st.text(recommended_movie_names[1])
-    #     st.image(recommended_movie_posters[1])
+    # st.write('Hi')
+    recommended_movie_names, recommended_movie_posters = recommend(
+        category, language, year, runtime)
+    col1, col2, col3, col4, col5 = st.columns(5)
+    with col1:
+        st.text(recommended_movie_names[0])
+        st.image(recommended_movie_posters[0])
+    with col2:
+        st.text(recommended_movie_names[1])
+        st.image(recommended_movie_posters[1])
 
-    # with col3:
-    #     st.text(recommended_movie_names[2])
-    #     st.image(recommended_movie_posters[2])
-    # with col4:
-    #     st.text(recommended_movie_names[3])
-    #     st.image(recommended_movie_posters[3])
-    # with col5:
-    #     st.text(recommended_movie_names[4])
-    #     st.image(recommended_movie_posters[4])
+    with col3:
+        st.text(recommended_movie_names[2])
+        st.image(recommended_movie_posters[2])
+    with col4:
+        st.text(recommended_movie_names[3])
+        st.image(recommended_movie_posters[3])
+    with col5:
+        st.text(recommended_movie_names[4])
+        st.image(recommended_movie_posters[4])
