@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import requests
 
-movies_dict = pickle.load(open('simple.pkl', 'rb'))
+movies_dict = pickle.load(open('simple_dict.pkl', 'rb'))
 dataset = pd.DataFrame(movies_dict)
 
 
@@ -23,12 +23,10 @@ def fetch_poster(movie_id):
 def recommend(genre, language='English', year='2017', runtime=90):
     dic = {"English": "en", "French": "fr",
            "Italian": "it", "German": "de", "Japanese": "ja"}
-    df = gen_md[gen_md['genre'] == genre]
+    df = dataset[dataset['genre'] == genre]
     if language is not 'None':
         df = df[df['original_language'] == dic[language]]
     df = df[df['year'] == year]
-    C = df['vote_average'].mean()
-    m = df['vote_count'].quantile(0.85)
 
     qualified = df[(df['vote_count'] >= m) & (df['vote_count'].notnull())][[
         'id', 'title', 'original_language', 'year', 'runtime', 'vote_count', 'vote_average', 'imdb_id']]
@@ -36,9 +34,6 @@ def recommend(genre, language='English', year='2017', runtime=90):
     qualified['runtime'] = qualified['runtime'].astype('int')
     qualified['time_diff'] = abs(qualified['runtime']-runtime)
 
-    qualified['IMDB_rating'] = qualified.apply(lambda x: (
-        x['vote_count']/(x['vote_count']+m) * x['vote_average']) + (m/(m+x['vote_count']) * C), axis=1)
-    qualified['IMDB_rating'] = qualified['IMDB_rating'].round(decimals=1)
     chart = qualified.sort_values(
         ['IMDB_rating', 'time_diff'], ascending=[False, True]).head(10)
     posters = []
