@@ -3,8 +3,8 @@ import pickle
 import pandas as pd
 import requests
 
-movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
-movies = pd.DataFrame(movies_dict)
+movies_dict = pickle.load(open('simple.pkl', 'rb'))
+dataset = pd.DataFrame(movies_dict)
 
 
 def fetch_poster(movie_id):
@@ -20,9 +20,12 @@ def fetch_poster(movie_id):
     return full_path
 
 
-def get_recommendation_chart(genre, language='en', year='2017', runtime=90):
+def recommend(genre, language='English', year='2017', runtime=90):
+    dic = {"English": "en", "French": "fr",
+           "Italian": "it", "German": "de", "Japanese": "ja"}
     df = gen_md[gen_md['genre'] == genre]
-    df = df[df['original_language'] == language]
+    if language is not 'None':
+        df = df[df['original_language'] == dic[language]]
     df = df[df['year'] == year]
     C = df['vote_average'].mean()
     m = df['vote_count'].quantile(0.85)
@@ -38,8 +41,11 @@ def get_recommendation_chart(genre, language='en', year='2017', runtime=90):
     qualified['IMDB_rating'] = qualified['IMDB_rating'].round(decimals=1)
     chart = qualified.sort_values(
         ['IMDB_rating', 'time_diff'], ascending=[False, True]).head(10)
+    posters = []
+    for i in list(chart['imdb_id']):
+        posters.append(fetch_poster(i))
 
-    return chart['title']
+    return list(chart['title']), posters
 
 
 st.title("Movie Recommender Simple System")
@@ -57,4 +63,23 @@ year = st.slider('The year of the movie', 1874, 2017, 2017)
 runtime = st.slider('The runtime of the movie in minutes', 60, 240, 90)
 
 if st.button('Recommend!'):
-    st.write('Hello')
+    st.write('Hi')
+    # recommended_movie_names, recommended_movie_posters = recommend(
+    #     category, language, year, runtime)
+    # col1, col2, col3, col4, col5 = st.columns(5)
+    # with col1:
+    #     st.text(recommended_movie_names[0])
+    #     st.image(recommended_movie_posters[0])
+    # with col2:
+    #     st.text(recommended_movie_names[1])
+    #     st.image(recommended_movie_posters[1])
+
+    # with col3:
+    #     st.text(recommended_movie_names[2])
+    #     st.image(recommended_movie_posters[2])
+    # with col4:
+    #     st.text(recommended_movie_names[3])
+    #     st.image(recommended_movie_posters[3])
+    # with col5:
+    #     st.text(recommended_movie_names[4])
+    #     st.image(recommended_movie_posters[4])
