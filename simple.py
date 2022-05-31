@@ -20,13 +20,13 @@ def fetch_poster(movie_id):
     return full_path
 
 
-def recommend(genre, language='English', year='2017', runtime=90):
+def recommend(genre, language, year, runtime):
     dic = {"English": "en", "French": "fr",
            "Italian": "it", "German": "de", "Japanese": "ja"}
     df = dataset[dataset['genre'] == genre]
     if language != 'None':
         df = df[df['original_language'] == dic[language]]
-    df = df[df['year'] == year]
+    df = df[df['year'] > year]
     df['time_diff'] = abs(df['runtime']-runtime)
 
     chart = df.sort_values(
@@ -45,10 +45,11 @@ category = st.selectbox(
     ('Action', 'Adventure', 'Animation', 'Comedy', 'Crime', 'Family', 'Fantasy', 'Drama', 'Documentary', 'History', 'Horror', 'Mystery', 'Romance', 'Science Fiction', 'Thriller', 'War'))
 
 language = st.radio(label='Language', options=[
-                    'English', 'French', 'Italian', 'German', 'Japanese', 'Others'])
+                    'English', 'French', 'Italian', 'German', 'Japanese', 'None'])
 st.write(
     '<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 year = st.slider('The year of the movie', 1874, 2017, 2017)
+year = str(year)
 
 runtime = st.slider('The runtime of the movie in minutes', 60, 240, 90)
 
@@ -56,20 +57,42 @@ if st.button('Recommend!'):
     # st.write('Hi')
     recommended_movie_names, recommended_movie_posters = recommend(
         category, language, year, runtime)
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.text(recommended_movie_names[0])
-        st.image(recommended_movie_posters[0])
-    with col2:
-        st.text(recommended_movie_names[1])
-        st.image(recommended_movie_posters[1])
+    print(recommended_movie_names)
+    if recommended_movie_names == []:
+        st.write('There is no movie, and please try again!')
+    else:
+        col1, col2, col3, col4, col5 = st.columns(5)
+        with col1:
+            st.text(recommended_movie_names[0])
+            st.image(recommended_movie_posters[0])
+        with col2:
+            st.text(recommended_movie_names[1])
+            st.image(recommended_movie_posters[1])
 
-    with col3:
-        st.text(recommended_movie_names[2])
-        st.image(recommended_movie_posters[2])
-    with col4:
-        st.text(recommended_movie_names[3])
-        st.image(recommended_movie_posters[3])
-    with col5:
-        st.text(recommended_movie_names[4])
-        st.image(recommended_movie_posters[4])
+        with col3:
+            st.text(recommended_movie_names[2])
+            st.image(recommended_movie_posters[2])
+        with col4:
+            st.text(recommended_movie_names[3])
+            st.image(recommended_movie_posters[3])
+        with col5:
+            st.text(recommended_movie_names[4])
+            st.image(recommended_movie_posters[4])
+
+        col6, col7, col8, col9, col10 = st.columns(5)
+        with col6:
+            st.text(recommended_movie_names[5])
+            st.image(recommended_movie_posters[5])
+        with col7:
+            st.text(recommended_movie_names[6])
+            st.image(recommended_movie_posters[6])
+
+        with col8:
+            st.text(recommended_movie_names[7])
+            st.image(recommended_movie_posters[7])
+        with col9:
+            st.text(recommended_movie_names[8])
+            st.image(recommended_movie_posters[8])
+        with col10:
+            st.text(recommended_movie_names[9])
+            st.image(recommended_movie_posters[9])
