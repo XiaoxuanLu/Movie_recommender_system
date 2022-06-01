@@ -1,7 +1,7 @@
 # Movie Recommender System
 
 ## The demo of the simple movie recommender
-[simple recommender](https://tm22pro.herokuapp.com/)
+[Simple recommender System](https://tm22pro.herokuapp.com/)
 
 ## Abstract
 For this project, we are interested in investigating how recommendation algorithms work on media platforms like Netflix. We want to build our own recommendation systems and (hopefully) make a cool movie recommerdation website in the end. We plan to build several movie recommendation systems based on different methods (popularity-based, content-based) and compare them in our evaluation. Later we plan to implement our recommender in a website format. <br/>
@@ -33,8 +33,8 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
    * Compare the content-based recommender systems to other mainstreams such as Amazon prime videos
 - [ ] Saving the Trained Model for Deployment
 - [ ] Writing the report
-- [ ] Creating a Website and deploying the model if time allowed
-- [ ] Deploying the website on cloud if time allowed
+- [x] Creating a Website and deploying the model if time allowed
+- [x] Deploying the website on cloud if time allowed
 
 ## Division of work (for now)
 - Xiaoyu: simple recommender
