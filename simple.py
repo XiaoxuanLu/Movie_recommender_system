@@ -20,13 +20,14 @@ def fetch_poster(movie_id):
     return full_path
 
 
-def recommend(genre, language, year, runtime):
+def recommend(genre, language, str_year, end_year, runtime):
     dic = {"English": "en", "French": "fr",
            "Italian": "it", "German": "de", "Japanese": "ja"}
     df = dataset[dataset['genre'] == genre]
-    if language != 'None':
+    if language != 'Any':
         df = df[df['original_language'] == dic[language]]
-    df = df[df['year'] > year]
+    df = df[df['year'] <= end_year]
+    df = df[df['year'] >= str_year]
     df['time_diff'] = abs(df['runtime']-runtime)
 
     chart = df.sort_values(
@@ -38,25 +39,29 @@ def recommend(genre, language, year, runtime):
     return list(chart['title']), posters
 
 
-st.title("Movie Recommender Simple System")
+st.title("Simple Movie Recommender")
 
 category = st.selectbox(
-    "What's your favorite movie category",
+    "Select your favorite genre",
     ('Action', 'Adventure', 'Animation', 'Comedy', 'Crime', 'Family', 'Fantasy', 'Drama', 'Documentary', 'History', 'Horror', 'Mystery', 'Romance', 'Science Fiction', 'Thriller', 'War'))
 
 language = st.radio(label='Language', options=[
-                    'English', 'French', 'Italian', 'German', 'Japanese', 'None'])
+                    'English', 'French', 'Italian', 'German', 'Japanese', 'Any'])
 st.write(
     '<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
-year = st.slider('The year of the movie', 1874, 2017, 2017)
-year = str(year)
+optionslst = list(range(1874, 2018))
+options = [str(x) for x in optionslst]
+range = st.select_slider('Provide a range for movie release year', options=options, value=('1874','2017'))
+str_year = range[0]
+end_year = range[1]
+# year = str(year)
 
-runtime = st.slider('The runtime of the movie in minutes', 60, 240, 90)
+runtime = st.slider('Set your preferred movie runtime in minutes', 60, 240, 90, step=10)
 
 if st.button('Recommend!'):
     # st.write('Hi')
     recommended_movie_names, recommended_movie_posters = recommend(
-        category, language, year, runtime)
+        category, language, str_year, end_year, runtime)
     print(recommended_movie_names)
     if recommended_movie_names == []:
         st.write('There is no movie, and please try again!')
