@@ -27,11 +27,11 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
          * Based on Movie Overviews and Taglines
          * Based on Movie Cast, Crew, Keywords and Genre 
          * Compared severl methods: Cosine similarity with TF-IDF and CountVectorizer & KL Divergence 
-- [ ] Testing and Validation
+- [x] Testing and Validation
    * Compare content-based results to Netflix recommendations?
    * Compare the simple recommender to information on [IMDb website](https://www.imdb.com/chart/top/?ref_=nv_mv_250).
    * Compare the content-based recommender systems to other mainstreams such as Amazon prime videos
-- [ ] Saving the Trained Model for Deployment
+- [x] Saving the Trained Model for Deployment
 - [ ] Writing the report
 - [x] Creating a Website and deploying the model if time allowed
 - [x] Deploying the website on cloud if time allowed
