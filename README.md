@@ -54,6 +54,6 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
 - Install package and run app
 ```properties
 pip install streamlit
-streamlit run app.py
-streamlit run simple.py
+streamlit run Content_based_app.py
+streamlit run Simple_app.py
 ``` 
