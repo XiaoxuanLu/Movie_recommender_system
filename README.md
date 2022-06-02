@@ -1,6 +1,6 @@
 # Movie Recommender System
 
-## The demo of the simple movie recommender
+## Demo website for the simple movie recommender
 [Simple recommender System](https://tm22pro.herokuapp.com/)
 
 ## Abstract
@@ -32,21 +32,18 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
    * Compare the simple recommender to information on [IMDb website](https://www.imdb.com/chart/top/?ref_=nv_mv_250).
    * Compare the content-based recommender systems to other mainstreams such as Amazon prime videos
 - [x] Saving the Trained Model for Deployment
-- [ ] Writing the report
-- [x] Creating a Website and deploying the model if time allowed
 - [x] Deploying the website on cloud if time allowed
+- [ ] Writing the report
 
-## Division of work (for now)
-- Xiaoyu: simple recommender
-- Xiaoxuan: data preprocessing and work on the content-based recommender
-- Yiming: feature addition of the simple recommender, later join on the content-based recommender
-- Violette: content-based recommender
+## Division of work
+- Xiaoyu: simple recommender, evaluations
+- Xiaoxuan: content-based recommender, website deployment
+- Yiming: simple recommender, website deployment
+- Violette: content-based recommender, evaluations
 
 ## Documentation
 - README.md: an overview of the project
-- Simple_recommender.ipynb: build a simple recommender based on ranking, langauge, runtime, and year
-- Content_based_recommendation.ipynb: build a content based recommender based on the text features such as tagline, overview, and actor. Compare and combine several similarity methods to build the recommender.
-- Visualizing_data.ipynb: Visualize the original dataset, and plot some fancy graphs to see if any feature is interesting to use.
+- ...
 
 ## How to run the project? 
 - clone or download this repository to your local machine
