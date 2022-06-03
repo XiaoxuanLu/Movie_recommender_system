@@ -43,6 +43,13 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
 
 ## Documentation
 - README.md: an overview of the project
+- General_recommendation_system.ipynb: build simple recommendation systems based on popularity and weighted rating we calculated. Additional features like genre, language, year, runtime, director etc are added to expand the recommender
+- Content_based_recommendation_systems.ipynb: build two types of content-based recommendation systems, one is based on Overviews and Taglines and the other is based on Cast, Crew, Keywords and Genre
+- Recommendation_system_watch_history.ipynb: build a content-based recommendation system based on user's watch history
+- Evaluation.ipynb: evalute simple/generalized recommender and content-based recommender by comparing with mainstream movie websites
+- Simple_app.py: create an app for simple recommendation system
+- Content_based_app.py: create an app for content-based recommendation system
+- presentation.pdf: presentation slides for the project
 - ...
 
 ## How to run the project? 
