@@ -61,3 +61,24 @@ pip install streamlit
 streamlit run Content_based_app.py
 streamlit run Simple_app.py
 ``` 
+
+## References
+Altszyler, E., Sigman, M., & Slezak, D.F. (2018). Corpus Specificity in LSA and Word2vec: The Role of Out-of-Domain Documents. Rep4NLP@ACL.
+
+Gomez-Uribe, C. A., & Hunt, N. (2015). The Netflix Recommender System. ACM Transactions on Management Information Systems, 6(4), 1–19. https://doi.org/10.1145/2843948
+
+
+Isinkaye, F. O., Folajimi, Y. O., & Ojokoh, B. A. (2015). Recommendation systems: Principles, methods and evaluation. Egyptian Informatics Journal, 16(3), 261–273. https://doi.org/10.1016/j.eij.2015.06.005
+
+Jalali, M., Mustapha, N., Sulaiman, Md. N., & Mamat, A. (2010). WebPUM: A Web-based recommendation system to predict user future movements. Expert Systems with Applications, 37(9), 6201–6212. https://doi.org/10.1016/j.eswa.2010.02.105
+
+Lops, P., de Gemmis, M., & Semeraro, G. (2010). Content-based Recommender Systems: State of the Art and Trends. Recommender Systems Handbook, 73–105. https://doi.org/10.1007/978-0-387-85820-3_3
+
+Meel, P., Bano, F., Goswami, A., Gupta, S. (2021). Movie Recommendation Using Content-Based and Collaborative Filtering. In: Gupta, D., Khanna, A., Bhattacharyya, S., Hassanien, A.E., Anand, S., Jaiswal, A. (eds) International Conference on Innovative Computing and Communications. Advances in Intelligent Systems and Computing, vol 1165. Springer, Singapore. https://doi.org/10.1007/978-981-15-5113-0_22
+
+Merve Acilar, A., & Arslan, A. (2009). A collaborative filtering method based on artificial immune network. Expert Systems with Applications, 36(4), 8324–8332. https://doi.org/10.1016/j.eswa.2008.10.029
+
+Pal, A., Parhi, P., Aggarwal, M. (2017) An improved content based collaborative filtering algorithm for movie recommendations. 2017 Tenth International Conference on Contemporary Computing (IC3), 1-3, doi: 10.1109/IC3.2017.8284357.
+
+‌Reddy, SRS & Nalluri, Sravani & Kunisetti, Subramanyam & Ashok, S. & Venkatesh, B. (2019). Content-Based Movie Recommendation System Using Genre Correlation: Proceedings of the Second International Conference on SCI 2018, Volume 2. 10.1007/978-981-13-1927-3_42. 
+
