@@ -1,6 +1,6 @@
 # Movie Recommender System
 
-## The demo of the simple movie recommender
+## Demo website for the simple movie recommender
 [Simple recommender System](https://tm22pro.herokuapp.com/)
 
 ## Abstract
@@ -32,21 +32,25 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
    * Compare the simple recommender to information on [IMDb website](https://www.imdb.com/chart/top/?ref_=nv_mv_250).
    * Compare the content-based recommender systems to other mainstreams such as Amazon prime videos
 - [x] Saving the Trained Model for Deployment
-- [ ] Writing the report
-- [x] Creating a Website and deploying the model if time allowed
 - [x] Deploying the website on cloud if time allowed
+- [x] Writing the report
 
-## Division of work (for now)
-- Xiaoyu: simple recommender
-- Xiaoxuan: data preprocessing and work on the content-based recommender
-- Yiming: feature addition of the simple recommender, later join on the content-based recommender
-- Violette: content-based recommender
+## Division of work
+- Xiaoyu: simple recommender, evaluations
+- Xiaoxuan: content-based recommender, website deployment
+- Yiming: simple recommender, website deployment
+- Violette: content-based recommender, evaluations
 
 ## Documentation
 - README.md: an overview of the project
-- Simple_recommender.ipynb: build a simple recommender based on ranking, langauge, runtime, and year
-- Content_based_recommendation.ipynb: build a content based recommender based on the text features such as tagline, overview, and actor. Compare and combine several similarity methods to build the recommender.
-- Visualizing_data.ipynb: Visualize the original dataset, and plot some fancy graphs to see if any feature is interesting to use.
+- General_recommendation_system.ipynb: build simple recommendation systems based on popularity and weighted rating we calculated. Additional features like genre, language, year, runtime, director etc are added to expand the recommender
+- Content_based_recommendation_systems.ipynb: build two types of content-based recommendation systems, one is based on Overviews and Taglines and the other is based on Cast, Crew, Keywords and Genre
+- Recommendation_system_watch_history.ipynb: build a content-based recommendation system based on user's watch history
+- Evaluation.ipynb: evalute simple/generalized recommender and content-based recommender by comparing with mainstream movie websites
+- Simple_app.py: create an app for simple recommendation system
+- Content_based_app.py: create an app for content-based recommendation system
+- presentation.pdf: presentation slides for the project
+- report.pdf: the report for the projct
 
 ## How to run the project? 
 - clone or download this repository to your local machine
@@ -54,5 +58,27 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
 - Install package and run app
 ```properties
 pip install streamlit
-streamlit run app.py
+streamlit run Content_based_app.py
+streamlit run Simple_app.py
 ``` 
+
+## References
+Altszyler, E., Sigman, M., & Slezak, D.F. (2018). Corpus Specificity in LSA and Word2vec: The Role of Out-of-Domain Documents. Rep4NLP@ACL.
+
+Gomez-Uribe, C. A., & Hunt, N. (2015). The Netflix Recommender System. ACM Transactions on Management Information Systems, 6(4), 1–19. https://doi.org/10.1145/2843948
+
+
+Isinkaye, F. O., Folajimi, Y. O., & Ojokoh, B. A. (2015). Recommendation systems: Principles, methods and evaluation. Egyptian Informatics Journal, 16(3), 261–273. https://doi.org/10.1016/j.eij.2015.06.005
+
+Jalali, M., Mustapha, N., Sulaiman, Md. N., & Mamat, A. (2010). WebPUM: A Web-based recommendation system to predict user future movements. Expert Systems with Applications, 37(9), 6201–6212. https://doi.org/10.1016/j.eswa.2010.02.105
+
+Lops, P., de Gemmis, M., & Semeraro, G. (2010). Content-based Recommender Systems: State of the Art and Trends. Recommender Systems Handbook, 73–105. https://doi.org/10.1007/978-0-387-85820-3_3
+
+Meel, P., Bano, F., Goswami, A., Gupta, S. (2021). Movie Recommendation Using Content-Based and Collaborative Filtering. In: Gupta, D., Khanna, A., Bhattacharyya, S., Hassanien, A.E., Anand, S., Jaiswal, A. (eds) International Conference on Innovative Computing and Communications. Advances in Intelligent Systems and Computing, vol 1165. Springer, Singapore. https://doi.org/10.1007/978-981-15-5113-0_22
+
+Merve Acilar, A., & Arslan, A. (2009). A collaborative filtering method based on artificial immune network. Expert Systems with Applications, 36(4), 8324–8332. https://doi.org/10.1016/j.eswa.2008.10.029
+
+Pal, A., Parhi, P., Aggarwal, M. (2017) An improved content based collaborative filtering algorithm for movie recommendations. 2017 Tenth International Conference on Contemporary Computing (IC3), 1-3, doi: 10.1109/IC3.2017.8284357.
+
+‌Reddy, SRS & Nalluri, Sravani & Kunisetti, Subramanyam & Ashok, S. & Venkatesh, B. (2019). Content-Based Movie Recommendation System Using Genre Correlation: Proceedings of the Second International Conference on SCI 2018, Volume 2. 10.1007/978-981-13-1927-3_42. 
+
