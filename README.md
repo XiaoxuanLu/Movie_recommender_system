@@ -50,7 +50,7 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
 - Simple_app.py: create an app for simple recommendation system
 - Content_based_app.py: create an app for content-based recommendation system
 - presentation.pdf: presentation slides for the project
-- ...
+- report.pdf: the report for the projct
 
 ## How to run the project? 
 - clone or download this repository to your local machine
