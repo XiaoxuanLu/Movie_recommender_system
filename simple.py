@@ -51,12 +51,14 @@ st.write(
     '<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 optionslst = list(range(1874, 2018))
 options = [str(x) for x in optionslst]
-range = st.select_slider('Provide a range for movie release year', options=options, value=('1874','2017'))
+range = st.select_slider('Provide a range for movie release year',
+                         options=options, value=('1874', '2017'))
 str_year = range[0]
 end_year = range[1]
 # year = str(year)
 
-runtime = st.slider('Set your preferred movie runtime in minutes', 60, 240, 90, step=10)
+runtime = st.slider(
+    'Set your preferred movie runtime in minutes', 60, 240, 90, step=10)
 
 if st.button('Recommend!'):
     # st.write('Hi')
