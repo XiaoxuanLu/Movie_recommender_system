@@ -33,7 +33,7 @@ For this project, we used [The Movie Dataset](https://www.kaggle.com/datasets/ro
    * Compare the content-based recommender systems to other mainstreams such as Amazon prime videos
 - [x] Saving the Trained Model for Deployment
 - [x] Deploying the website on cloud if time allowed
-- [ ] Writing the report
+- [x] Writing the report
 
 ## Division of work
 - Xiaoyu: simple recommender, evaluations
