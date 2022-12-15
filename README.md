@@ -1,7 +1,7 @@
 # Movie Recommender System
 
 ## Demo website for the simple movie recommender
-[Simple recommender System](https://tm22pro.herokuapp.com/)
+
 
 ## Abstract
 For this project, we are interested in investigating how recommendation algorithms work on media platforms like Netflix. We want to build our own recommendation systems and (hopefully) make a cool movie recommerdation website in the end. We plan to build several movie recommendation systems based on different methods (popularity-based, content-based) and compare them in our evaluation. Later we plan to implement our recommender in a website format. <br/>
